@@ -190,11 +190,73 @@ const PropertySearchApp = () => {
                                     <button type="button" onClick={handleReset} className="secondary-button">Reset</button>
                                 </div>
                             </form>
+
+                        </div>
+                        {/* Favourites List */}
+                        <div
+                            className="card"
+                            onDragOver={handleDragOver}
+                            onDrop={handleDropOnFavourites}
+                        >
+                            <div className="favourites-header">
+                                <h2 className="card-title">
+                                    <Heart size={24} className="icon" style={{color: '#ef4444'}} />
+                                    Favourites ({favourites.length})
+                                </h2>
+                                {favourites.length > 0 && (
+                                    <button onClick={clearFavourites} className="clear-button">
+                                        <Trash2 size={16} />
+                                        Clear All
+                                    </button>
+                                )}
+                            </div>
+
+                            <div className="favourites-drop-zone">
+                                {favourites.length === 0 ? (
+                                    <p className="empty-message">
+                                        Drag properties here or click the heart icon to add favourites
+                                    </p>
+                                ) : (
+                                    <div className="favourites-list">
+                                        {favourites.map(property => (
+                                            <div
+                                                key={property.id}
+                                                className="favourite-item"
+                                                draggable
+                                                onDragStart={() => handleDragStart(property)}
+                                            >
+                                                <div className="favourite-content" onClick={() => setSelectedProperty(property)}>
+                                                    <p className="favourite-title">{property.type} - {property.bedrooms} bed</p>
+                                                    <p className="favourite-location">{property.location}</p>
+                                                    <p className="favourite-price">£{property.price.toLocaleString()}</p>
+                                                </div>
+                                                <button
+                                                    onClick={() => removeFromFavourites(property.id)}
+                                                    className="remove-button"
+                                                >
+                                                    <X size={18} />
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div
+                                className="remove-zone"
+                                onDragOver={handleDragOver}
+                                onDrop={handleDropRemove}
+                            >
+                                <Trash2 size={24} />
+                                <p className="remove-zone-text">Drag here to remove from favourites</p>
+                            </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+
     );
 };
 export default PropertySearchApp;
