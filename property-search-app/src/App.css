@@ -1,0 +1,43 @@
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    width: 100%;
+}
+
+.header {
+    background-color: #2563eb;
+    color: white;
+    padding: 24px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.header-title {
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.header-icon {
+    margin-right: 8px;
+}
+
+.main-content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
