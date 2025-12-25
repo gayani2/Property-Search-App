@@ -1,0 +1,172 @@
+{
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland.",
+      "longDescription": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior throughout.",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "added": {
+        "month": "October",
+        "day": 12,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop1pic1.jpg",
+        "/images/prop1pic2.jpg",
+        "/images/prop1pic3.jpg",
+        "/images/prop1pic4.jpg",
+        "/images/prop1pic5.jpg",
+        "/images/prop1pic6.jpg"
+      ],
+      "floorPlan": "/images/prop1floorplan.jpg"
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat.",
+      "longDescription": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher and a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite with a shower attachment over the bath. There is also a separate wet room.",
+      "location": "Crofton Road Orpington BR6",
+      "added": {
+        "month": "September",
+        "day": 14,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop2pic1.jpg",
+        "/images/prop2pic2.jpg",
+        "/images/prop2pic3.jpg",
+        "/images/prop2pic4.jpg",
+        "/images/prop2pic5.jpg",
+        "/images/prop2pic6.jpg"
+      ],
+      "floorPlan": "/images/prop2floorplan.jpg"
+    },
+    {
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 895000,
+      "tenure": "Freehold",
+      "description": "Spacious four bedroom detached house with large garden and double garage in quiet residential area.",
+      "longDescription": "Spacious four bedroom detached house with large garden and double garage in quiet residential area. This impressive family home features a grand entrance hall, large living room with bay window, separate dining room, and a modern kitchen with breakfast area. The master bedroom includes an en-suite bathroom.",
+      "location": "Chislehurst Road, Chislehurst BR7",
+      "added": {
+        "month": "November",
+        "day": 5,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop3pic1.jpg",
+        "/images/prop3pic2.jpg",
+        "/images/prop3pic3.jpg",
+        "/images/prop3pic4.jpg",
+        "/images/prop3pic5.jpg",
+        "/images/prop3pic6.jpg"
+      ],
+      "floorPlan": "/images/prop3floorplan.jpg"
+    },
+    {
+      "id": "prop4",
+      "type": "Apartment",
+      "bedrooms": 1,
+      "price": 285000,
+      "tenure": "Leasehold",
+      "description": "Modern one bedroom apartment in newly built development with secure parking and communal gardens.",
+      "longDescription": "Modern one bedroom apartment in newly built development with secure parking and communal gardens. This contemporary apartment features an open-plan living area with integrated kitchen, spacious bedroom with built-in wardrobes, and a sleek bathroom suite.",
+      "location": "Bromley High Street, Bromley BR1",
+      "added": {
+        "month": "December",
+        "day": 1,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop4pic1.jpg",
+        "/images/prop4pic2.jpg",
+        "/images/prop4pic3.jpg",
+        "/images/prop4pic4.jpg",
+        "/images/prop4pic5.jpg",
+        "/images/prop4pic6.jpg"
+      ],
+      "floorPlan": "/images/prop4floorplan.jpg"
+    },
+    {
+      "id": "prop5",
+      "type": "Bungalow",
+      "bedrooms": 2,
+      "price": 525000,
+      "tenure": "Freehold",
+      "description": "Charming two bedroom detached bungalow with conservatory and beautifully maintained garden.",
+      "longDescription": "Charming two bedroom detached bungalow with conservatory and beautifully maintained garden. This delightful property offers single-level living with bright and airy rooms throughout. The accommodation comprises entrance porch, hallway, spacious lounge with feature fireplace, fitted kitchen, two good-sized bedrooms, and a modern bathroom.",
+      "location": "Green Lane, Farnborough BR6",
+      "added": {
+        "month": "August",
+        "day": 20,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop5pic1.jpg",
+        "/images/prop5pic2.jpg",
+        "/images/prop5pic3.jpg",
+        "/images/prop5pic4.jpg",
+        "/images/prop5pic5.jpg",
+        "/images/prop5pic6.jpg"
+      ],
+      "floorPlan": "/images/prop5floorplan.jpg"
+    },
+    {
+      "id": "prop6",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 1250000,
+      "tenure": "Freehold",
+      "description": "Stunning five bedroom executive home with home office, gym, and landscaped gardens.",
+      "longDescription": "Stunning five bedroom executive home with home office, gym, and landscaped gardens. This exceptional property has been designed to the highest specification throughout. The ground floor features a magnificent entrance hall, dual aspect living room, formal dining room, state-of-the-art kitchen/breakfast room with bi-fold doors to the garden, utility room, and ground floor cloakroom.",
+      "location": "Park Avenue, Orpington BR6",
+      "added": {
+        "month": "July",
+        "day": 15,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop6pic1.jpg",
+        "/images/prop6pic2.jpg",
+        "/images/prop6pic3.jpg",
+        "/images/prop6pic4.jpg",
+        "/images/prop6pic5.jpg",
+        "/images/prop6pic6.jpg"
+      ],
+      "floorPlan": "/images/prop6floorplan.jpg"
+    },
+    {
+      "id": "prop7",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 475000,
+      "tenure": "Leasehold",
+      "description": "Spacious three bedroom first floor flat with balcony and allocated parking space.",
+      "longDescription": "Spacious three bedroom first floor flat with balcony and allocated parking space. This well-presented apartment offers versatile living accommodation comprising a bright entrance hall, large living/dining room with access to a private balcony, fully fitted kitchen, three bedrooms with the master benefiting from en-suite shower room, and a family bathroom.",
+      "location": "Station Approach, Petts Wood BR5",
+      "added": {
+        "month": "September",
+        "day": 28,
+        "year": 2022
+      },
+      "images": [
+        "/images/prop7pic1.jpg",
+        "/images/prop7pic2.jpg",
+        "/images/prop7pic3.jpg",
+        "/images/prop7pic4.jpg",
+        "/images/prop7pic5.jpg",
+        "/images/prop7pic6.jpg"
+      ],
+      "floorPlan": "/images/prop7floorplan.jpg"
+    }
+  ]
+}
