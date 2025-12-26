@@ -13,6 +13,7 @@
         "month": "October",
         "day": 12,
         "year": 2022
+
       },
       "images": [
         "/images/prop1pic1.jpg",
@@ -143,6 +144,7 @@
         "/images/prop6pic6.jpg"
       ],
       "floorPlan": "/images/prop6floorplan.jpg"
+
     },
     {
       "id": "prop7",
