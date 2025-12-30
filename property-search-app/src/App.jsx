@@ -15,6 +15,25 @@ import './App.css';
  * - Tabs for description, floor plan, and map
  * - Responsive design for mobile and desktop
  */
+// Removes <script> and <iframe> ,tagsBlocks javascript: URLs ,Removes inline event handlers like onclick
+
+const sanitizeText = (text) => {
+    if (typeof text !== 'string') return '';
+    return text
+        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+        .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
+        .replace(/javascript:/gi, '')
+        .replace(/on\w+="[^"]*"/gi, '')
+
+
+};
+
+
+
+const sanitizeNumber = (value) => {
+    const num = parseInt(value, 10);
+    return isNaN(num) ? 0 : Math.max(0, num);
+};
 
 const PropertySearchApp = () => {
     // State variables
@@ -76,26 +95,51 @@ const PropertySearchApp = () => {
     // Search handler - filters properties based on criteria
     const handleSearch = (e) => {
         e.preventDefault();
+
         let results = [...properties];
 
-        if (filters.type) {
-            results = results.filter(p => p.type.toLowerCase() === filters.type.toLowerCase());
+        // Sanitize all inputs first
+        const safeType = sanitizeText(filters.type).toLowerCase();
+        const safeLocation = sanitizeText(filters.location).toLowerCase();
+        const safeMinPrice = sanitizeNumber(filters.minPrice);
+        const safeMaxPrice = sanitizeNumber(filters.maxPrice);
+        const safeBedrooms = sanitizeNumber(filters.bedrooms);
+
+        // Apply filters using SANITIZED values
+        if (safeType) {
+            results = results.filter(
+                p => p.type.toLowerCase() === safeType
+            );
         }
-        if (filters.minPrice) {
-            results = results.filter(p => p.price >= parseInt(filters.minPrice));
+
+        if (safeMinPrice > 0) {
+            results = results.filter(
+                p => p.price >= safeMinPrice
+            );
         }
-        if (filters.maxPrice) {
-            results = results.filter(p => p.price <= parseInt(filters.maxPrice));
+
+        if (safeMaxPrice > 0) {
+            results = results.filter(
+                p => p.price <= safeMaxPrice
+            );
         }
-        if (filters.bedrooms) {
-            results = results.filter(p => p.bedrooms >= parseInt(filters.bedrooms));
+
+        if (safeBedrooms > 0) {
+            results = results.filter(
+                p => p.bedrooms >= safeBedrooms
+            );
         }
-        if (filters.location) {
-            results = results.filter(p => p.location.toLowerCase().includes(filters.location.toLowerCase()));
+
+        if (safeLocation) {
+            results = results.filter(
+                p => p.location.toLowerCase().includes(safeLocation)
+            );
         }
 
         setFilteredProperties(results);
     };
+
+
 
     // Reset all filters
     const handleReset = () => {
