@@ -16,6 +16,7 @@ import './App.css';
  * - Responsive design for mobile and desktop
  */
 // Removes <script> and <iframe> ,tagsBlocks javascript: URLs ,Removes inline event handlers like onclick
+//JSX Encoding
 
 const sanitizeText = (text) => {
     if (typeof text !== 'string') return '';
@@ -34,6 +35,73 @@ const sanitizeNumber = (value) => {
     const num = parseInt(value, 10);
     return isNaN(num) ? 0 : Math.max(0, num);
 };
+const Footer= () =>(
+    <footer className="footer">
+        <div className="footer-container">
+            <div className="footer-grid">
+                <div className="footer-column">
+                    <h3 className="footer-title">
+                        <Home size={24} />
+                        Property Search
+                    </h3>
+                    <p className="footer-text">
+                        Find your dream home with our comprehensive property search platform.
+                        Browse thousands of properties and save your favourites.
+                    </p>
+                </div>
+
+                <div className="footer-column">
+                    <h4 className="footer-heading">Quick Links</h4>
+                    <ul className="footer-list">
+                        <li><a href="#" className="footer-link">About Us</a></li>
+                        <li><a href="#" className="footer-link">Contact</a></li>
+                        <li><a href="#" className="footer-link">FAQs</a></li>
+                        <li><a href="#" className="footer-link">Blog</a></li>
+                        <li><a href="#" className="footer-link">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div className="footer-column">
+                    <h4 className="footer-heading">Property Types</h4>
+                    <ul className="footer-list">
+                        <li><a href="#" className="footer-link">Apartments</a></li>
+                        <li><a href="#" className="footer-link">Houses</a></li>
+                        <li><a href="#" className="footer-link">Flats</a></li>
+                        <li><a href="#" className="footer-link">Bungalows</a></li>
+                        <li><a href="#" className="footer-link">Commercial</a></li>
+                    </ul>
+                </div>
+
+                <div className="footer-column">
+                    <h4 className="footer-heading">Contact Us</h4>
+                    <ul className="footer-list">
+                        <li className="footer-contact"> info@propertysearch.com</li>
+                        <li className="footer-contact"> (075) 123-4567</li>
+                        <li className="footer-contact"> 123 Real Estate Avenue</li>
+                        <li className="footer-contact">London, UK</li>
+                    </ul>
+                    <div className="footer-social">
+                        <a href="#" className="social-icon">Facebook</a>
+                        <a href="#" className="social-icon">Twitter</a>
+                        <a href="#" className="social-icon">Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <div className="footer-bottom">
+                <p>&copy; 2025 Property Search. All rights reserved.</p>
+                <div className="footer-legal">
+                    <a href="#" className="footer-link">Privacy Policy</a>
+                    <span className="footer-separator">•</span>
+                    <a href="#" className="footer-link">Terms of Service</a>
+                    <span className="footer-separator">•</span>
+                    <a href="#" className="footer-link">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+);
+
 
 const PropertySearchApp = () => {
     // State variables
@@ -424,6 +492,7 @@ const PropertySearchApp = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 };
@@ -663,6 +732,7 @@ const PropertyDetail = ({ property, onBack, isFavourite, onToggleFavourite }) =>
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
