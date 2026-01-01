@@ -1,0 +1,2 @@
+// fileMock.cjs
+module.exports = {};
