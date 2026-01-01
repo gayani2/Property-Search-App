@@ -16,7 +16,6 @@ import './App.css';
  * - Responsive design for mobile and desktop
  */
 // Removes <script> and <iframe> ,tagsBlocks javascript: URLs ,Removes inline event handlers like onclick
-//JSX Encoding
 
 const sanitizeText = (text) => {
     if (typeof text !== 'string') return '';
@@ -35,7 +34,7 @@ const sanitizeNumber = (value) => {
     const num = parseInt(value, 10);
     return isNaN(num) ? 0 : Math.max(0, num);
 };
-const Footer= () =>(
+const Footer = () => (
     <footer className="footer">
         <div className="footer-container">
             <div className="footer-grid">
@@ -75,9 +74,9 @@ const Footer= () =>(
                 <div className="footer-column">
                     <h4 className="footer-heading">Contact Us</h4>
                     <ul className="footer-list">
-                        <li className="footer-contact"> info@propertysearch.com</li>
-                        <li className="footer-contact"> (075) 123-4567</li>
-                        <li className="footer-contact"> 123 Real Estate Avenue</li>
+                        <li className="footer-contact">📧 info@propertysearch.com</li>
+                        <li className="footer-contact">📞 (555) 123-4567</li>
+                        <li className="footer-contact">📍 123 Real Estate Avenue</li>
                         <li className="footer-contact">London, UK</li>
                     </ul>
                     <div className="footer-social">
@@ -102,7 +101,6 @@ const Footer= () =>(
     </footer>
 );
 
-
 const PropertySearchApp = () => {
     // State variables
     const [properties, setProperties] = useState([]);
@@ -119,14 +117,15 @@ const PropertySearchApp = () => {
         minPrice: '',
         maxPrice: '',
         bedrooms: '',
-        location: ''
+        location: '',
+        addedAfter: '',
+        addedBefore: ''
     });
 
     // Load properties from JSON file on component mount
     useEffect(() => {
         setLoading(true);
         fetch(`${import.meta.env.BASE_URL}properties.json`)
-
             .then(response => {
                 if (!response.ok) throw new Error('Failed to load properties');
                 return response.json();
@@ -142,6 +141,7 @@ const PropertySearchApp = () => {
                 setLoading(false);
             });
     }, []);
+
 
     // Load favourites from localStorage
     useEffect(() => {
@@ -203,15 +203,34 @@ const PropertySearchApp = () => {
                 p => p.location.toLowerCase().includes(safeLocation)
             );
         }
+        if (filters.addedAfter) {
+            const afterDate = new Date(filters.addedAfter);
+            results = results.filter(p => {
+                const propertyDate = new Date(p.added.year,
+                    new Date(Date.parse(p.added.month + " 1, 2000")).getMonth(),
+                    p.added.day);
+                return propertyDate >= afterDate;
+            });
+        }
+
+        if (filters.addedBefore) {
+            const beforeDate = new Date(filters.addedBefore);
+            results = results.filter(p => {
+                const propertyDate = new Date(p.added.year,
+                    new Date(Date.parse(p.added.month + " 1, 2000")).getMonth(),
+                    p.added.day);
+                return propertyDate <= beforeDate;
+            });
+        }
+
 
         setFilteredProperties(results);
     };
 
 
-
     // Reset all filters
     const handleReset = () => {
-        setFilters({ type: '', minPrice: '', maxPrice: '', bedrooms: '', location: '' });
+        setFilters({ type: '', minPrice: '', maxPrice: '', bedrooms: '', location: '', addedAfter: '', addedBefore: '' });
         setFilteredProperties(properties);
     };
 
@@ -387,6 +406,27 @@ const PropertySearchApp = () => {
                                     />
                                 </div>
 
+                                <div className="form-row">
+                                    <div className="form-group">
+                                        <label className="label">Added After</label>
+                                        <input
+                                            type="date"
+                                            className="input"
+                                            value={filters.addedAfter}
+                                            onChange={(e) => setFilters({...filters, addedAfter: e.target.value})}
+                                        />
+                                    </div>
+                                    <div className="form-group">
+                                        <label className="label">Added Before</label>
+                                        <input
+                                            type="date"
+                                            className="input"
+                                            value={filters.addedBefore}
+                                            onChange={(e) => setFilters({...filters, addedBefore: e.target.value})}
+                                        />
+                                    </div>
+                                </div>
+
                                 <div className="button-group">
                                     <button type="submit" className="primary-button">Search</button>
                                     <button type="button" onClick={handleReset} className="secondary-button">Reset</button>
@@ -492,7 +532,7 @@ const PropertySearchApp = () => {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };
@@ -560,7 +600,10 @@ const PropertyCard = ({ property, onSelect, onDragStart, isFavourite, onToggleFa
                     View Details
                 </button>
             </div>
+
         </div>
+
+
     );
 };
 
@@ -734,6 +777,7 @@ const PropertyDetail = ({ property, onBack, isFavourite, onToggleFavourite }) =>
             </div>
             <Footer />
         </div>
+
     );
 };
 
